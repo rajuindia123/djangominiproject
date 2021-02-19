@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Havi</title>
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+</head>
+<body>
+
+<div class='container-fluid'>
+ {% include 'admin/navbar.html' %}
+        {% if messages %}
+                {% for message in messages  %}
+                <p {% if message.tags %} class="alert mt-4 ml-2 alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+<div class="row mt-5">
+        
+    
+        
+        <div class="col-12 ">
+            <table class="table table-hover bg-white shadow-lg">
+            <thead>
+                <tr>
+                
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                
+                <th scope="col">Phone Number</th>
+                <th scope="col">D-O-B</th>
+                <th scope="col">Password</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+            {% if stus %}
+            {% for co in stus %}
+                <tr>
+                <th scope="row">{{co.id}}</th>
+                <td>{{co.name}}</td>
+                <td>{{co.email}}</td>
+                <td>{{co.phone_No}}</td>
+                <td>{{co.d_o_b}}</td>
+                <td>{{co.password}}</td>
+                
+                
+                </tr>
+                {% endfor %}
+                 {% else %} 
+                 {% for ls in les %}
+                 
+                 <tr>
+                <th scope="row">{{ls.id}}</th>
+                <td>{{ls.name}}</td>
+                <td>{{ls.email}}</td>
+                <td>{{ls.phone_No}}</td>
+                <td>{{ls.d_o_b}}</td>
+                <td>{{ls.password}}</td>
+                
+                
+                </tr>
+                 
+                 
+                 
+                 {% endfor %}
+                
+                {% endif %}
+            </tbody>
+            </table>
+        
+        
+        </div>
+    
+
+
+
+
+</div>
+
+
+        
+
+
+
+</div>
+
+
+
+    <script src="{% static 'users/js/jq.js' %}"></script>
+    <script src="{% static 'users/js/popper.js' %}"></script>
+    <script src="{% static 'users/js/bootstrap.js' %}"></script>
+    
+</body>
+</html>

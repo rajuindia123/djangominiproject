@@ -1,0 +1,19 @@
+{% extends 'users/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 offset-2 bg-white mt-5 shadow-lg rounded ">
+        <h4 class=" alert alert-info text-center mt-3">Update Data  Student Information</h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+
+
+            {{form.as_p}}
+            <input type="submit" value="Save" name="add" class=" btn btn-success mb-5">
+        </form>
+ 
+
+
+    </div>
+</div>
+{% endblock content %}
